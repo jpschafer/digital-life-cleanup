@@ -8,8 +8,7 @@
 !www.facebook.com##div.displayed.m:has(span:contains("Sponsored")) { display: none !important }
 
 
-www.facebook.com##div.m.displayed:has(.snap-free.hscroller-snap.no-hscroller.hscroller.m)
-www.facebook.com##div.m > div.m > div.m.bg-s2 > div.m.bg-s3 > div.m.hscroller:upward(4)
+www.facebook.com##.snap-free.hscroller-snap.no-hscroller.hscroller.m:upward(4)
 www.facebook.com##div.bg-s3[aria-label*="video"] 
 www.facebook.com##div.bg-s3[aria-label*="marketplace"] 
 
