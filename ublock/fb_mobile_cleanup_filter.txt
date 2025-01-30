@@ -1,0 +1,30 @@
+! Title: Jason's Personal FB Mobile "Cleanup" Filter
+! Expires: 1 day
+!
+! This is best used with FB Clean My Feed with ScriptMonkey, as the below span removals create issues in scrolling
+! Essentially this script is to remove the unwanted reels bar, as well as remove some menu items. Feel free to use and customize as you see fit.
+! Tested against FB Mobile
+!www.facebook.com##div.displayed.m:has(span:contains("Follow")) { display: none !important }
+!www.facebook.com##div.displayed.m:has(span:contains("Sponsored")) { display: none !important }
+
+
+www.facebook.com##div.m.displayed:has(.snap-free.hscroller-snap.no-hscroller.hscroller.m)
+www.facebook.com##div.m > div.m > div.m.bg-s2 > div.m.bg-s3 > div.m.hscroller:upward(4)
+www.facebook.com##div.bg-s3[aria-label*="video"] 
+www.facebook.com##div.bg-s3[aria-label*="marketplace"] 
+
+www.facebook.com##div.bg-s3[aria-label*="feed"] { width: 25% !important; }
+www.facebook.com##div.bg-s3[aria-label*="feed"] > div { width: 100% !important; }
+www.facebook.com##div.bg-s3[aria-label*="feed"] > div > div.m { margin-left: 50% !important; }
+
+www.facebook.com##div.bg-s3[aria-label*="friends"] { width: 25% !important; margin-left: 25% !important; }
+www.facebook.com##div.bg-s3[aria-label*="friends"] > div { width: 100% !important; }
+www.facebook.com##div.bg-s3[aria-label*="friends"] > div > div.m { margin-left: 50% !important; }
+
+www.facebook.com##div.bg-s3[aria-label*="messages"] { width: 25% !important; margin-left: 50% !important; }
+www.facebook.com##div.bg-s3[aria-label*="messages"] > div { width: 100% !important; }
+www.facebook.com##div.bg-s3[aria-label*="messages"] > div > div.m { margin-left: 50% !important; }
+
+www.facebook.com##div.bg-s3[aria-label*="notifications"] { width: 25% !important; margin-left: 75% !important; }
+www.facebook.com##div.bg-s3[aria-label*="notifications"] > div { width: 100% !important; }
+www.facebook.com##div.bg-s3[aria-label*="notifications"] > div > div.m { margin-left: 50% !important; }
