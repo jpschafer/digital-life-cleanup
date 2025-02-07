@@ -1,0 +1,16 @@
+{
+  "name": "fb-cleanup-tool",
+  "version": "1.0.0",
+  "description": "Helps with Cleaning up Facebook Likes & Other Things",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "electron": "electron ."
+  },
+  "author": "Jason Schafer",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^34.1.1",
+    "react": "^19.0.0"
+  }
+}
