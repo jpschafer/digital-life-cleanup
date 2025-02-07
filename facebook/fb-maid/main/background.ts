@@ -5,7 +5,7 @@ const axios = require('axios').default;
 import { createWindow } from './helpers'
 
 const ACCESS_TOKEN = "EACApFx8kikQBO4wmnebN1zjkIxnDxtfIGGgyncxyZCZBY9r7ar6bDPVx52gieib6owhbNmbzZAS2UrDYA8OmMBZBJ9pusK42ZAhDHHrxw0UlO29stpNSzHHt4tu5JJIk6Hs1gc2eglvT9ZCol4SXUeEltUPSnqSW9zPtgoQ1TQTdoIkDr8SbwoTgqrH7j3MN4FIJWi863RuZB3FDd3Wbq2R5h9II1Fp12YMTefUv0zLzGIAy56GW3AKLLS38HrHiGh9ZBwZDZD";
-const FB_API_URL = `https://graph.facebook.com/v18.0/me/likes?fields=name,category,link&access_token=${ACCESS_TOKEN}`;
+const FB_API_URL = `https://graph.facebook.com/v22.0/me/likes?fields=name,category,link,picture{url}&limit=10&access_token=${ACCESS_TOKEN}`;
 
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -61,10 +61,12 @@ ipcMain.handle("fetch-liked-pages", async (): Promise<Record<string, any[]>> => 
                     if (!pagesByCategory[category]) {
                         pagesByCategory[category] = [];
                     }
+                    console.log(page);
                     pagesByCategory[category].push({
                         name: page.name,
                         link: page.link,
                         id: page.id,
+                        pictureUrl: page.picture.data.url
                     });
                 });
             }
